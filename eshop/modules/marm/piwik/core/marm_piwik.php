@@ -24,7 +24,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
- 
+
 class marm_piwik {
 
     const VERSION = '0.6';
@@ -227,7 +227,7 @@ class marm_piwik {
 					$replacement[0]='\"';
 					$replacement[1]='\"';
                     $aFormed[] = '"'.preg_replace($pattern, $replacement, $mPushParam).'"';
-				
+
                 }
                 elseif(is_bool($mPushParam)) {
                     $aFormed[] = $mPushParam?'true':'false';
@@ -411,7 +411,7 @@ class marm_piwik {
     public function setPiwikParamsForDetails($oViewObject)
     {
         $oProduct =  $oViewObject->getProduct();
-        $oCategory = $oViewObject->getCategory();
+        $oCategory = $oProduct->getCategory();
         $this->addPushParams(
             'setEcommerceView',
             $oProduct->oxarticles__oxartnum->value,
